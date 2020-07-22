@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Garage</title>
+  <meta charset="utf-8">
+  <meta name="author" content="DBMT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <link href="css/mdb.min.css" rel="stylesheet">
+   <link href="css/jquery.notify.min.css" rel="stylesheet">
+   <link href="css/bootstrap-select.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <!-- <script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * By Arthur Gareginyan (arthurgareginyan@gmail.com)
+    * For full source code, visit http://www.mycyberuniverse.com
+    */
+    window.onload = function() {
+      document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+      }, false);
+      document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+      function disabledEvent(e){
+        if (e.stopPropagation){
+          e.stopPropagation();
+        } else if (window.event){
+          window.event.cancelBubble = true;
+        }
+        e.preventDefault();
+        return false;
+      }
+    };
+  </script>
+ -->
+<!-- Header Image -->
+
+<!-- /Header Image -->
+    <!-- Navigation Tabs -->
+    <section class="navsec d-print-none">
+    <div class="navmenu">
+      <div class="container">
+       
+      <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-add-tab" data-toggle="tab" href="#nav-add" role="tab" aria-controls="nav-add" aria-selected="true">Add Client</a>
+    <a class="nav-item nav-link" id="nav-mrf-tab" data-toggle="tab" href="#nav-mrf" role="tab" aria-controls="nav-mrf" aria-selected="false">Job Card</a>
+   <!--- 
+
+   <a class="nav-item nav-link" id="nav-inword-tab" data-toggle="tab" href="#nav-inword" role="tab" aria-controls="nav-inword" aria-selected="false">Blank</a>
+  <a class="nav-item nav-link" id="nav-inspect-tab" data-toggle="tab" href="#nav-inspect" role="tab" aria-controls="nav-inspect" aria-selected="false">Blank</a>
+
+   --->
+  </div>
+</nav>
+
+      </div>   
+    </div>
+</section>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab">
+    <section class="section-padding">
+
+  <div class="addclient col-lg-12 col-md-12">
+    <div class="container container-class" style="align-content: center;">
+ <form method="post" name="customerForm"> 
+        <h5 style="border-bottom: 2px solid black; text-align: center;">Add Client</h5>
+         <div class="row">
+        <div class="col-md-6 demo">
+          <label>Reg No. :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="regno" id="regno"> 
+        </div>
+        </div>
+         <div class="row">
+        <div class="col-md-6 demo">
+          <label>Vehical Name :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="v_name" id="v_name"> 
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6 demo">
+          <label>Contact Person :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="contact_person" id="contact_person"> 
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6 demo" >
+          <label>Address :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" name="address" class="form-control" id="address"> 
+        </div>
+        </div>
+
+         <div class="row">
+        <div class="col-md-6 demo">
+          <label>Contact Number :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" name="contact" class="form-control" id="contact"> 
+        </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary submit" name="submit" value="save">Save</button>
+         <button class="btn btn-primary" type="reset">Cancel</button>
+
+        </div>
+        </div>
+  </form>
+  <form method="post" name="componentForm">
+ <h5 style="border-bottom: 2px solid black; text-align: center;">Add Component</h5>
+         <div class="row">
+        <div class="col-md-6 demo">
+          <label>Component Name :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="comp_name" id="comp_name"> 
+        </div>
+        </div>
+         <div class="row">
+        <div class="col-md-6 demo">
+          <label>Component ID :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="comp_id" id="comp_id"> 
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6 demo">
+          <label>Component Cost :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="comp_cost" id="comp_cost"> 
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6 demo">
+          <label>GST Slab :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="gst" id="gst"> 
+        </div>
+        </div>
+
+         <div class="row">
+        <div class="col-md-6 demo">
+          <label>Total Component Cost :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="t_c_cost" id="t_c_cost" readonly> 
+        </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary submit" name="submit" value="save">Save</button>
+         <button class="btn btn-primary" type="reset">Cancel</button>
+
+        </div>
+        </div>
+
+
+
+ </form>
+    </div>
+  </div>  
+</section>
+
+  </div>
+ 
+  <div class="tab-pane fade" id="nav-mrf" role="tabpanel" aria-labelledby="nav-mrf-tab">
+    <section class="section-padding">
+      <div class="mrf col-lg-12 col-md-12">
+    <div class="container container-class" id="container">
+ <form  method="post" id="jobcard" name="jobcardForm"> 
+<div class="row header_img" ><div class="col-md-12"><img src="img/garage.png" height="115px"></div></div>
+
+        <h4 style="border-bottom: 2px solid black; text-align: center;"> Job Card</h4>
+   <!-- Search form -->
+       
+               <div class="row">
+              <div class="col-md-2"> 
+          <label>Reg No.:</label>
+              </div>
+         <div class="col-md-10">
+           <!-- <div class="md-form"> -->
+            <input class="form-control search" type="text" id="Search" name="Search" placeholder="Search" maxlength="80">
+           <!--  <input type="text" class="form-control" name="regdis" id="regdis" maxlength="80"> -->
+              <!-- </div> -->
+            </div>
+            </div>  
+                           <div class="row">
+                            <div class="display"></div>
+              <div class="col-md-2"> 
+          <label>Name :</label>
+              </div>
+         <div class="col-md-10">
+           <!-- <div class="md-form"> -->
+            <input type="text" class="form-control" name="namedis" id="namedis" maxlength="80">
+              <!-- </div> -->
+            </div>
+            </div>  
+            <div class="row">
+        
+          <div class="col-md-2 ">
+          <label>Address:</label>
+          </div>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="Cl_address" id="Cl_address" maxlength="80">
+          </div>
+          </div>
+         
+
+                <div style="border-top: 2px solid black;"></div>
+                <div class="row">
+                <div class="col-md-3">
+                  <label>Mobile No. :</label>
+                </div>
+                <div class="col-md-3">
+                 <input type="text" class="form-control" name="mobile_no" id="mobile_no" maxlength="10"> 
+                </div>
+         <div class="col-md-3">
+                  <label>Date :</label>
+                </div>
+                <div class="col-md-3" >
+                 <input type="text" class="form-control" name="date" id="date" readonly> 
+                </div>
+
+                </div>
+              
+                <div class="row">
+                <div class="col-md-3">
+                  <label>Job Card No. :</label>
+                </div>
+                <div class="col-md-3">
+                 <input type="text" class="form-control" name="jobcard_id" id="jobcard_id"> 
+                </div>
+              <div class="col-md-3">
+                  <label>Vehical Name :</label>
+                </div>
+                
+                 <!-- Default unchecked -->
+
+
+                <div class="col-md-3">
+
+                        <input type="text" class="form-control" name="vehical_name" id="vehical_name"> 
+                </div>
+
+                
+                </div>
+              
+<div class="hidden aria-hidden"></div>
+                   <div class="row">
+                
+                <div class="col-md-12">
+              <button class="btn btn-primary" id="historygarage" data-toggle="modal" data-target="#history" type="button">History</button>
+              <div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="History of Vehical" aria-hidden="true">
+  <div class="modal-dialog modal-lg " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5>History of &nbsp</h5><h5 class="modal-title" id="history_title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="history_display">
+        <div class="row">
+        <div class="date col-md-4"></div>
+        <div class="details col-md-8"></div>
+        
+        </div>     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+                </div>
+                </div>
+
+                <div  style="border-top: 2px solid black;"></div>
+                 <div class="row">
+                <div class="col-md-12">
+                  <h5 style="text-align: center;">Job Work :</h5>
+                </div>
+                <div class="col-md-12">
+                 <table class="table table-bordered " id="dynamic_field" style="text-align: center;">
+          <thead>
+            <tr>
+             <th scope="col" class="srnoth" style="display: none;">Sr no</th>
+              <th scope="col">Service Details</th>
+                    <th scope="col">Amount</th>
+              <th scope="col">Qty</th>
+        
+           <th class="d-print-none "><img src="img/baseline_queue_black_18dp.png" name="addtab" id="addtab"></th> 
+              
+            </tr>
+          </thead>
+          <tbody>
+           <tr>
+       
+         
+              
+               </tr>
+              
+          </tbody>
+          <tfoot>
+            <tr>
+            <td colspan="2">Total</td>
+            <td colspan="1"><input type="text" class="form-control" name="total" id="total" value=""></td>
+          </tr>
+          </tfoot>
+        </table> 
+         <div class="instru_display"></div>
+      </div>
+    </div>
+    
+       
+
+                <div class="row d-print-none">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary submit" name="submit" id="submitmrf" value="save">Save</button>
+                 <button class="btn btn-primary" id="resetmrf" type="reset">Reset</button> 
+                   <!-- <button class="btn btn-primary" id="invoicegarage" type="button">Invoice</button> -->
+                 <button class="btn btn-primary" id="printmrf" type="button">Print</button> 
+        
+                </div>
+                </div>
+ </form>
+    </div>
+  </div> 
+    </section>
+     </div>
+  <div class="tab-pane fade" id="nav-inword" role="tabpanel" aria-labelledby="nav-inword-tab">
+    <section class="section-padding">
+      <div class="inword col-lg-12 col-md-12">
+    <div class="container container-class" id="container">
+      <form method="post" name="inword_entryForm"> 
+        <h5 style="border-bottom: 2px solid black; text-align: center;"> Generate Inword</h5>
+        <div class="row">
+        <div class="sidenav col-md-2 d-print-none">
+      <div id="MainMenu">
+        <div class="panel">
+           <a href="#demo1" class="nav-link" data-toggle="collapse">Bajaj <i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo1">
+            <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+        </div>
+      </div>
+        </div>
+        
+      <div class="col-md-10 colcls"> 
+      <div class="row">
+        <div class="col-md-3">
+          <label>Customer Name:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="inword_name" id="inword_name" class="form-control">
+        </div>
+        <div class="col-md-1">
+          <label>Address:</label>
+        </div>
+        <div class="col-md-5">
+          <input type="text" name="inword_address" id="inword_address" class="form-control">
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Lab ID:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="inword_labid" id="inword_labid" class="form-control">
+      </div>
+      <div class="col-md-3">
+          <label>Planed Delivery Date:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="inword_plan_delivery_date" id="inword_plan_delivery_date" class="form-control">
+        </div>
+    </div>
+     <div class="row">
+      <div class="col-md-3">
+        <label>Challan Number:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="inword_challan_number" id="inword_challan_number" class="form-control">
+      </div>
+      <div class="col-md-3">
+          <label>Challan Date:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="inword_challan_date" id="inword_challan_date" class="form-control">
+        </div>
+    </div>
+  
+
+<div class="instrument-section" style="border-top: 2px solid black;">
+    <div class="row d-print-none">
+        <div class="closemr">
+   <button class="btn btn-primary" name="add_instru_btn" id="add_instru_btn" type="button">Add Instrument</button>
+     <button class="btn btn-primary" name="inword_invoice" id="inword_invoice" type="button">Invoice</button>
+  <button class="btn btn-primary" name="clsmr_btn" id="clsmrbtn" type="button">Close MR</button>
+</div>
+    </div>
+ 
+<div class="col-md-12 insrument_add_section d-print-none">
+
+</div>
+
+  <div class="aftersave" style="border-top: 2px solid black;">
+        <h5>Instrument List</h5>
+    
+
+        </div>
+
+
+      <div class="row d-print-none">
+          <button class="btn btn-primary " type="button" id="print_inword" >Print</button>
+         <button class="btn btn-primary" name="generate-cali" type="button">Generate Certificate</button> 
+         <button class="btn btn-primary" type="reset">cancel</button> 
+         </div>
+</div>
+</div>
+     
+
+
+       
+      </form>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <div class="tab-pane fade" id="nav-inspect" role="tabpanel" aria-labelledby="nav-inspect-tab">
+      <section class="section-padding">
+      <div class="inword col-lg-12 col-md-12">
+    <div class="container container-class">
+      <form action="index.php" method="post"> 
+        <h5 style="border-bottom: 2px solid black; text-align: center;"> Generate Inword</h5>
+        <div class="row">
+        <div class="sidenav col-md-2">
+      <div id="MainMenu">
+        <div class="panel">
+           <a href="#demo1" class="nav-link" data-toggle="collapse">Bajaj <i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo1">
+            <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+
+           <a href="#demo2" class="nav-link" data-toggle="collapse">Videocon <i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo2">
+             <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+
+          <a href="#demo3" class="nav-link" data-toggle="collapse">Suzuki<i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo3">
+               <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+          <a href="#demo4" class="nav-link" data-toggle="collapse">Honda<i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo4">
+             <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+        </div>
+      </div>
+        </div>
+        
+      <div class="col-md-10">
+        <div class="Date" style="text-align: right;">
+         <label>Date:</label> 
+         <input type="Date" name="historydate">
+        </div>
+  <label>Customer Name :</label><br>
+  <label>Lab ID :</label> <br> 
+
+<div class="instrument-section" style="border-top: 2px solid black;">
+   <label>Instrument Name :</label> <br>
+    <label>Size :</label><br>
+ 
+    <label>Make :</label><br>
+ 
+    <label>ID No :</label><br>
+
+    <label>LC :</label><br>
+
+    <label>Certificate No :</label><br>
+    </div>
+ 
+
+  <div class="tableclass" style="border-top: 2px solid black;">
+        <h5>Parameters calibrated</h5>
+    
+         <table class="table table-bordered" style="text-align: center;">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Actual Size</th>
+      <th scope="col">Calibrated Size</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+       </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+       </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+       <td></td>
+         </tr>
+         <tr>
+      <th scope="row"></th>
+      <td></td>
+       <td></td>
+         </tr>
+  </tbody>
+</table> 
+        </div>
+
+
+         
+
+</div>
+</div>
+     
+
+
+       
+      </form>
+    </div>
+  </div>
+</section>
+  </div>
+
+</div>
+
+<!-- /Navigation Tabs -->
+
+<!-- Add Client -->
+<!--Auto system Date script-->
+<script>
+  function today(){
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").value = d + "/" + m + "/" + y;
+}
+</script>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/scrolling-nav.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script src="js/modernizr-2.8.3.min.js"></script> 
+<script src="js/jquery.notify.min.js"></script> 
+<script src="js/custom/add.js"></script> 
+<script src="js/custom/search.js"></script>
+<script src="js/custom/table.js"></script>
+<script src="js/custom/jobcard.js"></script>
+<script src="js/custom/inword_entry.js"></script>
+<script src="js/custom/instrument_details.js"></script>
+<script src="js/custom/compo_add.js"></script>
+<script type="text/javascript">
+  wow = new WOW({
+    boxClass: 'wow', // default
+    animateClass: 'animated', // default/ default
+    mobile: true, // default
+    live: true // default
+  })
+  wow.init();
+</script>
+</body>
+</html>
