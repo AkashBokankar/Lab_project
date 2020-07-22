@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Microcal LAB</title>
+  <meta charset="utf-8">
+  <meta name="author" content="DBMT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <link href="css/mdb.min.css" rel="stylesheet">
+   <link href="css/jquery.notify.min.css" rel="stylesheet">
+   <link href="css/bootstrap-select.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <!-- <script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * By Arthur Gareginyan (arthurgareginyan@gmail.com)
+    * For full source code, visit http://www.mycyberuniverse.com
+    */
+    window.onload = function() {
+      document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+      }, false);
+      document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+      function disabledEvent(e){
+        if (e.stopPropagation){
+          e.stopPropagation();
+        } else if (window.event){
+          window.event.cancelBubble = true;
+        }
+        e.preventDefault();
+        return false;
+      }
+    };
+  </script>
+ -->
+<!-- Header Image -->
+
+<!-- /Header Image -->
+    <!-- Navigation Tabs -->
+    <section class="navsec d-print-none">
+    <div class="navmenu">
+      <div class="container">
+       
+      <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-add-tab" data-toggle="tab" href="#nav-add" role="tab" aria-controls="nav-add" aria-selected="true">Add Client</a>
+    <a class="nav-item nav-link" id="nav-mrf-tab" data-toggle="tab" href="#nav-mrf" role="tab" aria-controls="nav-mrf" aria-selected="false">M-R Form</a>
+    <a class="nav-item nav-link" id="nav-inword-tab" data-toggle="tab" href="#nav-inword" role="tab" aria-controls="nav-inword" aria-selected="false">Inword Entry</a>
+  <a class="nav-item nav-link" id="nav-inspect-tab" data-toggle="tab" href="#nav-inspect" role="tab" aria-controls="nav-inspect" aria-selected="false">Inword History</a>
+  </div>
+</nav>
+
+      </div>   
+    </div>
+</section>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab">
+    <section class="section-padding">
+
+  <div class="addclient col-lg-12 col-md-12">
+    <div class="container container-class" style="align-content: center;">
+ <form method="post" name="customerForm"> 
+        <h5 style="border-bottom: 2px solid black; text-align: center;">Add Client</h5>
+        <div class="row">
+        <div class="col-md-6" style="text-align: right;">
+          <label>Customer Name :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" class="form-control" name="name" id="name"> 
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6" style="text-align: right;">
+          <label>Address :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" name="address" class="form-control" id="address"> 
+        </div>
+        </div>
+
+         <div class="row">
+        <div class="col-md-6" style="text-align: right;">
+          <label>Contact Number :</label>
+        </div>
+        <div class="col-md-5">
+         <input type="text" name="contact" class="form-control" id="contact"> 
+        </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary submit" name="submit" value="save">Save</button>
+         <button class="btn btn-primary" type="reset">Cancel</button>
+
+        </div>
+        </div>
+ 
+
+
+
+ </form>
+    </div>
+  </div>  
+</section>
+
+  </div>
+ 
+  <div class="tab-pane fade" id="nav-mrf" role="tabpanel" aria-labelledby="nav-mrf-tab">
+    <section class="section-padding">
+      <div class="mrf col-lg-12 col-md-12">
+    <div class="container container-class" id="container">
+ <form  method="post" id="mrff" name="mrfForm"> 
+        <h4 style="border-bottom: 2px solid black; text-align: center;"> Material Recived Form</h4>
+   <!-- Search form -->
+               <div class="row">
+              <div class="col-md-2"> 
+          <label>Customer Name:</label>
+              </div>
+         <div class="col-md-10">
+           <!-- <div class="md-form"> -->
+            <input class="form-control search" type="text" id="Search" name="search" placeholder="Search" maxlength="80">
+            <input type="text" class="form-control" name="namedis" id="namedis" maxlength="80">
+              <!-- </div> -->
+            </div>
+            </div>   
+            <div class="row">
+          <div class="display"></div>
+          <div class="col-md-2 ">
+          <label>Address:</label>
+          </div>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="Cl_address" id="Cl_address" maxlength="80">
+          </div>
+          </div>
+         
+
+                <div style="border-top: 2px solid black;"></div>
+                <div class="row">
+                <div class="col-md-3">
+                  <label>Customer Challan Number :</label>
+                </div>
+                <div class="col-md-3">
+                 <input type="text" class="form-control" name="challan_no" id="challan_no" maxlength="20"> 
+                </div>
+         <div class="col-md-3">
+                  <label>Challan Date :</label>
+                </div>
+                <div class="col-md-3">
+                 <input type="Date" class="form-control" name="challan_date" id="challan_date"> 
+                </div>
+
+                </div>
+                
+              
+
+
+
+                <div class="row">
+                <div class="col-md-3">
+                  <label>Date Of Receipt :</label>
+                </div>
+                <div class="col-md-3">
+                 <input type="Date" class="form-control" name="receipt_date" id="receipt_date"> 
+                </div>
+              <div class="col-md-3">
+                  <label>Requirement Of Calibration :</label>
+                </div>
+                
+                 <!-- Default unchecked -->
+
+
+                <div class="col-md-3">
+            <select class="select form-control" id="nabl_cert"  name="nabl_cert">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="with_nabl">With NABL cirtificate</option>
+            <option value="without_nabl">Without NABL cirtificate</option>
+            
+        </select>
+
+
+                </div>
+
+                
+                </div>
+              
+
+                   <div class="row">
+                    <div class="col-md-3">
+                  <label>Condition Of Item :</label>
+                </div>
+                <div class="col-md-9">
+                 <input type="text" class="form-control" name="item_condition" id="item_condition" maxlength="60"> 
+                </div>
+                </div>
+
+                <div  style="border-top: 2px solid black;"></div>
+                 <div class="row">
+                <div class="col-md-12">
+                  <h5 style="text-align: center;">Description Of Instruments :</h5>
+                </div>
+                <div class="col-md-12">
+                 <table class="table table-bordered " id="dynamic_field" style="text-align: center;">
+          <thead>
+            <tr>
+             <th scope="col" class="srnoth" style="display: none;">Sr no</th>
+              <th scope="col">Technical Name</th>
+              <th scope="col">Qty</th>
+           <th class="d-print-none "><a><img src="img/baseline_queue_black_18dp.png" name="addtab" id="addtab"></a></th> 
+              
+            </tr>
+          </thead>
+          <tbody>
+           <tr>
+       
+         
+              
+               </tr>
+              
+          </tbody>
+        </table> 
+         <div class="instru_display"></div>
+      </div>
+    </div>
+    
+        <h5 style="border-top: 2px solid black; text-align: center;">Dispatch Instructions</h5>
+                    <div class="row">
+                <div class="col-md-6">
+                  <label>Plan Date Of Delivery</label>
+                </div>
+                <div class="col-md-4">
+                 <input type="Date" class="form-control" name="plan_date" id="plan_date"> 
+                </div>
+              </div>
+              <div class="row">
+           <div class="col-md-6">
+                  <label>Next calibration due on as per your specification :</label>
+                </div>
+                <div class="col-md-4">
+                 <input type="Date" class="form-control" name="item_due" id="item_due"> 
+                </div>
+
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                  <label>Report to be prepared in the name of :</label>
+                </div>
+                <div class="col-md-4">
+                 <input type="text" class="form-control" name="report_name" id="report_name" maxlength="30"> 
+                </div>
+              </div>
+                <div class="row">
+                <div class="col-md-6">
+                  <label>Special instructions for calibration methods/handling/storage :</label>
+                </div>
+                <div class="col-md-6">
+            <textarea class="form-control" id="special_inst_calib" name="special_inst_calib" rows="2" maxlength="160"></textarea>
+
+                </div>
+              </div>
+              <h5 style="border-top: 2px solid black; text-align: center;">
+                For office use only
+              </h5>
+
+        <div class="row">
+                <div class="col-md-4">
+                  <label>Mode of payment:</label>
+                </div>
+                <div class="col-md-3">
+            <select class="select form-control" id="payment_mode" name="payment_mode">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="cash">Cash</option>
+            <option value="cheque">Cheque</option>
+            <option value="demand draft">Demand Draft</option>
+        </select>
+
+
+                </div>
+              </div>
+
+              <script type="text/javascript">
+          // Material Select Initialization
+        $(document).ready(function() {
+           $('.select').material_select();
+         });
+        </script>
+
+               <div class="row">
+                <div class="col-md-4">
+                  <label>Estimated calibration charges :</label>
+                </div>
+                <div class="col-md-3">
+                 <input type="text" class="form-control" name="est_cal_charges" id="est_cal_charges" maxlength="10"> 
+                </div>
+                <div class="col-md-2">
+                  <label>Other Charges :</label>
+                </div>
+                <div class="col-md-2">
+                 <input type="text" class="form-control" name="other_charges" id="other_charges" maxlength="10"> 
+                </div>
+                </div>
+
+                       <div class="row">
+                <div class="col-md-4">
+                  <label>Lab ID No. :</label>
+                </div>
+                <div class="col-md-3">
+               <input type="text" class="form-control" name="lab_id" id="lab_id" placeholder="Lab ID will go here" readonly>
+                </div>
+           <div class="col-md-2">
+                  <label>Date :</label>
+                </div>
+                <div class="col-md-2">
+               <input type="text" class="form-control" onclick="today()" id="date" name="date" placeholder="Click for Date" readonly>
+                </div>
+              </div>
+
+         <div class="row">
+                <div class="col-md-4">
+                  <label>Dispatch Mode :</label>
+                </div>
+        <div class="col-md-3">
+            <select class="select form-control" name="delivery_mode" id="delivery_mode">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="hand_delivery<">Hand Delivery</option>
+            <option value="courier">Courier</option>
+        </select>
+                </div>
+                </div>
+      <div style="border-top: 2px solid black;"></div>
+  
+
+                <div class="row d-print-none">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary submit" name="submit" id="submitmrf" value="save">Save</button>
+                 <button class="btn btn-primary" id="resetmrf" type="reset">Reset</button> 
+                  <button type="btn" class="btn btn-primary" id="editmrf" type="button">Edit</button> 
+                   <button class="btn btn-primary" id="updatemrf" type="button" style="display: none;">Update</button>
+                 <button class="btn btn-primary" id="printmrf" type="button">Print</button> 
+        
+                </div>
+                </div>
+ </form>
+    </div>
+  </div> 
+    </section>
+     </div>
+  <div class="tab-pane fade" id="nav-inword" role="tabpanel" aria-labelledby="nav-inword-tab">
+    <section class="section-padding">
+      <div class="inword col-lg-12 col-md-12">
+    <div class="container container-class" id="container">
+      <form method="post" name="inword_entryForm"> 
+        <h5 style="border-bottom: 2px solid black; text-align: center;"> Generate Inword</h5>
+        <div class="row">
+        <div class="sidenav col-md-2 d-print-none">
+      <div id="MainMenu">
+        <div class="panel">
+           <a href="#demo1" class="nav-link" data-toggle="collapse">Bajaj <i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo1">
+            <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="content" id="content">
+          <!-- Button trigger modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade right" id="datasheet_popup" tabindex="-1" role="dialog" aria-labelledby="datasheet_popup" aria-hidden="true">
+  <div class="modal-dialog modal-fluid" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="datasheet_popup">Datasheet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="datasheet_popup_modal_body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+        </div>
+      <div class="col-md-10 colcls"> 
+      <div class="row">
+        <div class="col-md-3">
+          <label>Customer Name:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="inword_name" id="inword_name" class="form-control">
+        </div>
+        <div class="col-md-1">
+          <label>Address:</label>
+        </div>
+        <div class="col-md-5">
+          <input type="text" name="inword_address" id="inword_address" class="form-control">
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Lab ID:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="inword_labid" id="inword_labid" class="form-control">
+      </div>
+      <div class="col-md-3">
+          <label>Planed Delivery Date:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="inword_plan_delivery_date" id="inword_plan_delivery_date" class="form-control">
+        </div>
+    </div>
+     <div class="row">
+      <div class="col-md-3">
+        <label>Challan Number:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="inword_challan_number" id="inword_challan_number" class="form-control">
+      </div>
+      <div class="col-md-3">
+          <label>Challan Date:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="inword_challan_date" id="inword_challan_date" class="form-control">
+        </div>
+    </div>
+  
+
+<div class="instrument-section" style="border-top: 2px solid black;">
+    <div class="row d-print-none">
+        <div class="closemr">
+   <button class="btn btn-primary" name="add_instru_btn" id="add_instru_btn" type="button">Add Instrument</button>
+     <button class="btn btn-primary" name="inword_invoice" id="inword_invoice" type="button">Invoice</button>
+  <button class="btn btn-primary" name="clsmr_btn" id="clsmrbtn" type="button">Close MR</button>
+</div>
+    </div>
+ 
+<div class="col-md-12 insrument_add_section d-print-none">
+
+</div>
+
+  <div class="aftersave" style="border-top: 2px solid black;">
+        <h5>Instrument List</h5>
+    
+
+        </div>
+
+
+      <div class="row d-print-none">
+          <button class="btn btn-primary " type="button" id="print_inword" >Print</button>
+         <button class="btn btn-primary" name="generate-cali" type="button">Generate Certificate</button> 
+         <button class="btn btn-primary" type="reset">cancel</button> 
+         </div>
+</div>
+</div>
+     
+
+
+       
+      </form>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <div class="tab-pane fade" id="nav-inspect" role="tabpanel" aria-labelledby="nav-inspect-tab">
+      <section class="section-padding">
+      <div class="inword col-lg-12 col-md-12">
+    <div class="container container-class">
+      <form action="index.php" method="post"> 
+        <h5 style="border-bottom: 2px solid black; text-align: center;"> Generate Inword</h5>
+        <div class="row">
+        <div class="sidenav col-md-2">
+      <div id="MainMenu">
+        <div class="panel">
+           <a href="#demo1" class="nav-link" data-toggle="collapse">Bajaj <i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo1">
+            <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+
+           <a href="#demo2" class="nav-link" data-toggle="collapse">Videocon <i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo2">
+             <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+
+          <a href="#demo3" class="nav-link" data-toggle="collapse">Suzuki<i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo3">
+               <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+          <a href="#demo4" class="nav-link" data-toggle="collapse">Honda<i class="fa fa-caret-down"></i></a>
+          <div class="collapse sidecollapse" id="demo4">
+             <a href="" class="nav-link">Snap Gauge</a>
+            <a href="" class="nav-link">Thread Ring</a>
+            <a href="" class="nav-link">Plunger Dial</a>
+          </div>
+        </div>
+      </div>
+        </div>
+        
+      <div class="col-md-10">
+        <div class="Date" style="text-align: right;">
+         <label>Date:</label> 
+         <input type="Date" name="historydate">
+        </div>
+  <label>Customer Name :</label><br>
+  <label>Lab ID :</label> <br> 
+
+<div class="instrument-section" style="border-top: 2px solid black;">
+   <label>Instrument Name :</label> <br>
+    <label>Size :</label><br>
+ 
+    <label>Make :</label><br>
+ 
+    <label>ID No :</label><br>
+
+    <label>LC :</label><br>
+
+    <label>Certificate No :</label><br>
+    </div>
+ 
+
+  <div class="tableclass" style="border-top: 2px solid black;">
+        <h5>Parameters calibrated</h5>
+    
+         <table class="table table-bordered" style="text-align: center;">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Actual Size</th>
+      <th scope="col">Calibrated Size</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+       </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+       </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+       <td></td>
+         </tr>
+         <tr>
+      <th scope="row"></th>
+      <td></td>
+       <td></td>
+         </tr>
+  </tbody>
+</table> 
+        </div>
+
+
+         
+
+</div>
+</div>
+     
+
+
+       
+      </form>
+    </div>
+  </div>
+</section>
+  </div>
+
+</div>
+
+<!-- /Navigation Tabs -->
+
+<!-- Add Client -->
+<!--Auto system Date script-->
+<script>
+  function today(){
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").value = d + "/" + m + "/" + y;
+}
+</script>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/scrolling-nav.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script src="js/modernizr-2.8.3.min.js"></script> 
+<script src="js/jquery.notify.min.js"></script> 
+<script src="js/custom/add.js"></script> 
+<script src="js/custom/search.js"></script>
+<script src="js/custom/table.js"></script>
+<script src="js/custom/mrf.js"></script>
+<script src="js/custom/inword_entry.js"></script>
+<script src="js/custom/instrument_details.js"></script>
+<script src="js/custom/update.js"></script>
+<!-- <script src="js/custom/cert_gen.js"></script> -->
+<script type="text/javascript">
+  wow = new WOW({
+    boxClass: 'wow', // default
+    animateClass: 'animated', // default/ default
+    mobile: true, // default
+    live: true // default
+  })
+  wow.init();
+</script>
+</body>
+</html>

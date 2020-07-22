@@ -1,0 +1,134 @@
+body{
+
+	background-color:  #DCDCDC;
+}
+h5{
+	padding-top: 3px;
+}
+.section-padding{
+
+	padding:20px 0px;
+}
+
+label, input, select, textarea{
+	margin: 3px 0px;
+	
+}
+
+.navsec{
+
+	background-color : blueviolet;
+}
+.container-class{
+	border-top: 2px solid blueviolet;
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding:20px;
+}
+
+a, a.disabled:hover, a:disabled:hover {
+    color: #ffffff;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: blueviolet;
+    background-color: #DCDCDC;
+    border-color: #dee2e6 #dee2e6 #DCDCDC;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.sidenav{
+
+	background-color: #9370DB;
+	border-radius: 5px;
+	padding:20px;
+}
+
+.sidecollapse{
+
+background-color: gray;
+
+}
+.display{
+display: none;
+padding: 10px;
+width: 100%;
+margin: 0 auto;
+border: 1px solid silver;
+}
+
+#user{
+
+	margin: 3px;
+}
+#nameul{
+
+	vertical-align: middle;
+}
+#namedis{
+	display: none;
+}
+#addtab{
+
+	width: 26px;
+}
+.removebtn{
+
+	width: 26px;
+	margin-top: 7px;
+}
+.btn{
+
+	padding: 5px 25px;
+}
+.stylecls{
+
+				background: transparent !important;
+            	border-top	:none !important;
+            	border-left: none !important;
+            	border-right: none !important;
+            	border-bottom: none !important;
+  				box-shadow: none !important;
+}
+.table td, .table th{
+	padding: 0rem 0.5rem;
+
+}
+.form-control{
+	padding: 0rem 0.75rem;
+	height: auto;
+}
+ .footer{
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	margin-left: 10px;
+}
+.printsec, .line{
+	margin-left: 20px;
+}
+.table-bordered td,.table-bordered th {
+    border: 1px solid #444444;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #444444;
+}
+
+table.table thead th {
+    border-top: 2px solid #444444;
+    border-left: 2px solid #444444;
+    border-right: 2px solid #444444;
+}
+.table-bordered {
+    border: 1px solid #444444;
+}
+.main_table, .database_table, td {
+	margin-top: 10px;
+	/*border-top: 2px solid #444444; */
+	border-bottom: 2px solid #444444; 
+	text-align: center;
+}
